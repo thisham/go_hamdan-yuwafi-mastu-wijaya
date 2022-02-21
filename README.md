@@ -1,2 +1,3 @@
-# go_hamdan-yuwafi-mastu-wijaya
-Repository for tasks submission, Alterra Academy.
+# Alterra Academy Tasks Submission
+
+This repository was maintained by Hamdan Yuwafi Mastu Wijaya.
