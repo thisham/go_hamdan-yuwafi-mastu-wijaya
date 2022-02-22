@@ -87,3 +87,50 @@ Pull request akan meminta "project master" untuk memeriksa perubahan sebelum di 
 Dalam suatu project, ada yang disebut branch utama (master, main, dlsb.). Namun, project perlu dikembangkan. Dalam suatu siklus development, metilah terdapat suatu branch yang menghandle satu siklus tersebut, maka terbentuklah branch development (dev, development, dlsb.). 
 
 Dalam penambahan satu fitur, baiknya membuat branch baru dari branch `dev`, dan dimerge ke branch `dev` kembali. Jika suatu siklus selesai, maka branch `dev` akan kembali dimerge ke branch `master`.
+
+
+## Tasks 
+
+1. Buat repository di github.com
+    <img src="./screenshots/0-buat-repository.png" width="500">
+2. Clone dengan git clone
+   ```bash 
+   $ git clone git@github.com:thisham/go_hamdan-yuwafi-mastu-wijaya.git main-repo
+   ```
+3. Pindah ke branch `dev`
+    <img src="./screenshots/1-pindah-ke-branch-dev.png" width="500">
+4. Push ke upstream
+    <img src="./screenshots/2-pindah-dan-push-branch.png" width="500">
+5. Pindah ke `featureA` dari `dev` dan push ke upstream
+    <img src="./screenshots/3-pindah-dan-push-branch-featureA.png" width="500">
+6. Buat perubahan di branch featureA, commit dan push ke upstream
+    <img src="./screenshots/5-git-add-git-commit-dan-push-ke-upstream-featureA.png" width="500">
+7. Pindah ke branch `dev`
+    <img src="./screenshots/6-switch-ke-branch-development.png" width="500">
+8. Buat branch `featureB` dari `dev` dan push ke upstream
+    <img src="./screenshots/7-membuat-dan-berpindah-ke-branch-featureB.png" width="500">
+9. Buat perubahan di branch featureB dan commit
+    <img src="./screenshots/8-perubahan-di-branch-feature-b.png" width="500">
+10. Merge ke branch `dev` dari `featureA`
+    <img src="./screenshots/9-merge-branch-featureA-ke-dev.png" width="500">
+11. Merge ke branch `dev` dari `featureB`, dan muncul conflict
+    <img src="./screenshots/10-merge-branch-featureB-ke-dev-dengan-conflict.png" width="500">
+12. Resolve conflict 
+    <img src="./screenshots/11-resolve-conflict-undone.png" width="500">
+    <img src="./screenshots/12-resolve-conflict-done.png" width="500">
+13. Push ke staging dan commit hasil resolve
+    <img src="./screenshots/13-staging-dan-commit-hasil-resolve-conflict.png" width="500">
+14. Push ke upstream untuk branch `dev`
+    <img src="./screenshots/14-push-ke-branch-development.png" width="500">
+15. Merge branch ke `master` dari `dev`
+    <img src="./screenshots/15-merge-branch-dari-dev-ke-master-dan-push-perubahan-ke-upstream.png" width="500">
+16. Hapus branch-branch lokal dan di upstream yang tidak terpakai
+    <img src="./screenshots/16-hapus-branch-lokal.png" width="500">
+    <img src="./screenshots/17-hapus-branch-upstream.png" width="500">
+
+### Unusual Cases
+Terdapat perubahan terhadap file, namun masih belum siap untuk di-commit. Akan tetapi karena ada suatu hal, terpaksa harus berpindah branch. Maka, dapat menggunakan stash. Misalkan sebagai berikut:
+1. Buat perubahan, naikkan ke staging dan masukkan ke stash
+   <img src="./screenshots/18-stash-perubahan.png" width="500">
+2. Ketika selesai apply kembali berubahan dan hapus stash
+   <img src="./screenshots/19-apply-and-drop-stash-perubahan.png" width="500">
