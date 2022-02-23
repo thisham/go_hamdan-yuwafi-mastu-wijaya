@@ -21,3 +21,13 @@ Pseudocode adalah algoritma yang ditulis menggunakan bahasa yang "mendekati" bah
 
 ### Flowchart
 Flowchart merupakan penggambaran algoritma dengan simbol-simbol dengan urutan dan dijelaskan secara mendetail.
+## Tasks
+### Algoritma penentuan bilangan prima
+<img src="./screenshots/flowchart-prima.png" width="500" />
+
+Whimsical Flowchart: https://whimsical.com/alterra-prima-YV4fcs31AAoLLF4Fstc6tY
+
+### Algoritma lampu dan tombol
+<img src="./screenshots/flowchart-lampu.png" width="500" />
+
+Whimsical Flowchart: https://whimsical.com/alterra-lamp-Mecwb2j2oh4vuNDZfChbKj
