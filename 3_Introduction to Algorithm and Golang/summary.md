@@ -31,3 +31,28 @@ Whimsical Flowchart: https://whimsical.com/alterra-prima-YV4fcs31AAoLLF4Fstc6tY
 <img src="./screenshots/flowchart-lampu.png" width="500" />
 
 Whimsical Flowchart: https://whimsical.com/alterra-lamp-Mecwb2j2oh4vuNDZfChbKj
+
+### Instalasi Golang (via ASDF plugins WSL Ubuntu 18.04)
+1. Cek plugin terpasang di ASDF dengan `asdf plugin list`;
+
+    <img src="./screenshots/1-cek-asdf-plugin.png" width="500" />
+
+2. Pasang plugin golang di ASDF dengan `asdf add golang` dan cek lagi apakah plugin terpasang dengan baik;
+
+    <img src="./screenshots/2-pasang-plugin-golang-dan-cek-plugin.png" width="500" />
+
+3. Cek versi golang yang tersedia di ASDF dengan `asdf list-all golang`;
+
+    <img src="./screenshots/3-cek-versi-golang-yang-tersedia.png" width="500" />
+
+4. Unduh paket instalasi golang dengan `asdf install golang no.mor.versi` dan cek paket golang di ASDF dengan `asdf list golang`;
+
+    <img src="./screenshots/4-unduh-paket-instalasi-golang-dan-cek-unduhan.png" width="500" />
+
+5. Set up global version untuk command `go` dengan `asdf global golang no.mor.versi`;
+
+    <img src="./screenshots/5-pilih-satu-versi-golang-default.png" width="500" />
+
+6. Cek instalasi golang dengan `go version`.
+
+    <img src="./screenshots/6-cek-instalasi-golang.png" width="500" />
