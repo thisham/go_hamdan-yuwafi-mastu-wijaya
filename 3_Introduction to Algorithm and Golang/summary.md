@@ -56,3 +56,53 @@ Whimsical Flowchart: https://whimsical.com/alterra-lamp-Mecwb2j2oh4vuNDZfChbKj
 6. Cek instalasi golang dengan `go version`.
 
     <img src="./screenshots/6-cek-instalasi-golang.png" width="500" />
+
+### Golang - Hello World
+
+#### Source code 
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, world")
+}
+```
+Code: [source](./praktikum/hello.go)
+
+#### Running Code
+
+##### Command
+```bash
+# root at this folder
+$ go run ./praktikum/hello.go
+```
+
+##### Output
+<img src="./screenshots/go-run-output.png" width="500" />
+
+#### Build Code
+##### Command
+```bash
+# root at ./praktikum
+$ go run hello.go
+```
+<img src="./screenshots/go-build-command.png" width="500" />
+
+##### Output
+<img src="./screenshots/go-build-output.png" width="500" />
+<img src="./screenshots/go-install-and-go-build-execute.png" width="500" />
+
+
+#### Install Source Code
+##### Command
+```bash
+# root at ./praktikum
+$ go run hello.go
+```
+<img src="./screenshots/go-install-command.png" width="500" />
+
+##### Output
+<img src="./screenshots/go-install-output.png" width="500" />
+<img src="./screenshots/go-install-and-go-build-execute.png" width="500" />
