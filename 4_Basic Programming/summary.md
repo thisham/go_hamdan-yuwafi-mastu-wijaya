@@ -40,8 +40,36 @@ Kadangkala, suatu prosedur harus dijalankan dalam kondisi tertentu, maka diadaka
   <img src="./screenshots/p3-divide-factor.png" width="800"/>
 
 ### Problem 4 - Bilangan Prima
-- Source code: [P3 - Prime Number](./praktikum/p4-prime-numbers.go)
+- Source code: [P4 - Prime Number](./praktikum/p4-prime-numbers.go)
 - Command to run: `go run .\p4-prime-numbers.go`
 - Result: 
 
   <img src="./screenshots/p4-prime-numbers.png" width="800"/>
+
+### Problem 5 - Palindrome
+- Source code: [P5 - Palindrome](./praktikum/p5-palindrome.go)
+- Command to run: `go run .\p5-palindrome.go "text will be checked as palindrome"`
+- Result: 
+
+  <img src="./screenshots/p5-palindrome.png" width="800"/>
+
+### Problem 6 - Exponents
+- Source code: [P6 - Exponents](./praktikum/p6-exponents.go)
+- Command to run: `go run .\p6-exponents.go`
+- Result: 
+
+  <img src="./screenshots/p6-exponents.png" width="800"/>
+
+### Problem 7 - Play with Asterisk
+- Source code: [P7 - Asterisk Pyramid](./praktikum/p7-asterisk-pyramid.go)
+- Command to run: `go run .\p7-asterisk-pyramid.go`
+- Result: 
+
+  <img src="./screenshots/p7-asterisk-pyramid.png" width="800"/>
+
+### Problem 8 - Multiplication Table
+- Source code: [P8 - Multiplication Table](./praktikum/p8-multiplication-table.go)
+- Command to run: `go run .\p8-multiplication-table.go`
+- Result: 
+
+  <img src="./screenshots/p8-multiplication-table.png" width="800"/>
