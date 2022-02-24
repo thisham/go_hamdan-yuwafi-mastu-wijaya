@@ -16,3 +16,32 @@ Module "fmt" adalah salah satu module yang disediakan golang secara default. Mod
 Dalam pemrograman, terdapat dasar-dasar yang harus diketahui. Termasuk tentang bagaimana menyimpan data dalam variabel, tipe variabel itu sendiri dan karakteristiknya. 
 
 Kadangkala, suatu prosedur harus dijalankan dalam kondisi tertentu, maka diadakanlah branching untuk memenuhinya. Namun pada saat suatu kondisi tersebut harus memberikan instruksi yang berulang, maka looping dapat digunakan untuk mengatasinya.
+
+## Task
+### Problem 1 - Luas Tabung
+- Source code: [P1 - Tube Wide](./praktikum/p1-tube-wide.go)
+- Command to run: `go run .\p1-tube-wide.go`
+- Result: 
+
+  <img src="./screenshots/p1-tube.png" width="800"/>
+
+### Problem 2 - Konversi ke Nilai Angka
+- Source code: [P2 - Numeric to Letter Grade](./praktikum/p2-numeric-to-letter-grade.go)
+- Command to run: `go run .\p2-numeric-to-letter-grade.go`
+- Result: 
+
+  <img src="./screenshots/p2-grade-converter.png" width="800"/>
+
+### Problem 3 - Faktor Pembagi Angka
+- Source code: [P3 - Number Divide Factor](./praktikum/p3-number-divide-factor.go)
+- Command to run: `go run .\p3-number-divide-factor.go`
+- Result: 
+
+  <img src="./screenshots/p3-divide-factor.png" width="800"/>
+
+### Problem 4 - Bilangan Prima
+- Source code: [P3 - Prime Number](./praktikum/p4-prime-numbers.go)
+- Command to run: `go run .\p4-prime-numbers.go`
+- Result: 
+
+  <img src="./screenshots/p4-prime-numbers.png" width="800"/>
