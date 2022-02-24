@@ -21,9 +21,9 @@ func getExponent(base int, power int) int {
 func main() {
 	var base, power int
 	fmt.Printf("Masukkan angka dasar: ")
-	fmt.Scanf("%d", &base)
+	fmt.Scanf("%d\n", &base)
 	fmt.Printf("Masukkan angka pangkat: ")
-	fmt.Scanf("%d", &power)
+	fmt.Scanf("%d\n", &power)
 
 	fmt.Println("Hasil perpangkatan: ", getExponent(base, power))
 }
