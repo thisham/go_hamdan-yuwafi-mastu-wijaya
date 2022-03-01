@@ -7,7 +7,6 @@ func cipherEncrypt(offset int, input string) string {
 	var initialCharacter int = int('a') - 1
 	var lastCharacter int = int('z')
 	offset = offset % initialCharacter
-	fmt.Println(string(rune(offset + 96)))
 
 	for _, character := range input {
 		var encryptedCharacterAscii int = int(character) + offset
