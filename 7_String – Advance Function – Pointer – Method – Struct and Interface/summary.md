@@ -39,3 +39,45 @@ Packages adalah kumpulan kode yang accessible di code lain selain di sub-folder 
 Panic error untuk menghentikan paksa blok kode yang sedang dieksekusi. Kemudian, golang akan memanggil defer untuk me-recover error yaNg sedang dialami.
 
 ## Tasks
+
+### Problem 1 - Common Substring
+
+- Source code: [P1 - Common Substring](praktikum/p1-common-substring.go)
+- Output:
+
+  <img src="./screenshots/p1-common-substring.png" width="800" />
+
+### Problem 2 - Caesar Cipher
+
+- Source code: [P2 - Caesar Cipher](praktikum/p2-caesar-cipher.go)
+- Output:
+
+  <img src="./screenshots/p2-caesar-cipher.png" width="800" />
+
+### Problem 3 - Swap Two Number using Pointer
+
+- Source code: [P3 - Swap Two Number using Pointer](praktikum/p3-swap-two-number-using-pointer.go)
+- Output:
+
+  <img src="./screenshots/p3-swap-two-numbers-using-pointer.png" width="800" />
+
+### Problem 4 - Min Max Using Pointer
+
+- Source code: [P4 - Min Max Using Pointer](praktikum/p4-min-max-using-pointer.go)
+- Output:
+
+  <img src="./screenshots/p4-min-max-using-pointer.png" width="800" />
+
+### Problem 5 - Student Score
+
+- Source code: [P5 - Student Score](praktikum/p5-student-score.go)
+- Output:
+
+  <img src="./screenshots/p5-student-score.png" width="800" />
+
+### Problem 6 - Substitution Cipher
+
+- Source code: [P6 - Substitution Cipher](praktikum/p6-substitution-cipher.go)
+- Output:
+
+  <img src="./screenshots/p6-substitution-cipher.png" width="800" />
