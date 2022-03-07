@@ -4,10 +4,10 @@ import "fmt"
 
 func search(source []int, query int) (result int, steps int, index int) {
 	var left int = 0
-	var right int = len(source)
+	var right int = len(source) - 1
 	index = -1
 
-	for (left <= right-1) && index <= -1 {
+	for (left <= right) && index <= -1 {
 		center := (left + right) / 2
 		if query < source[center] {
 			right = center - 1
