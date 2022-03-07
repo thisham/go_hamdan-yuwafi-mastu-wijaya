@@ -20,8 +20,8 @@ func search(source []int, query int) (result int, steps int, index int) {
 	}
 
 	if index <= -1 {
-		reason := fmt.Sprintf("search query not found in array source! completely searching in %d steps.", steps)
-		panic(reason)
+		fmt.Println("search query not found in array source! completely searching in", steps, "steps.")
+		return
 	}
 
 	return source[index], steps, index
