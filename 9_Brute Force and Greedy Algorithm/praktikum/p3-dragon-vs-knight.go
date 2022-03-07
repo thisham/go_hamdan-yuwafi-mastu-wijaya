@@ -33,7 +33,7 @@ func getMinimumOfKnightsTotalHeight(dragonHeads, knightHeights []int) int {
 			continue
 		}
 
-		defer fmt.Println("knight falls.")
+		defer fmt.Printf("knight falls: ")
 		return -1
 	}
 	return knightsMinimumHeight
