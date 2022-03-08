@@ -2,11 +2,11 @@
 
 ## Overview
 
-Dalam chapter ini, hal yang didapat antara lain: 
+Dalam chapter ini, hal yang didapat antara lain:
 
 1. [Dynamic Programming secara Umum](#general-of-dynamic-programming);
-2. [Karakteristik Dynamic Programming];
-3. [Metode Dynamic Programming].
+2. [Karakteristik Dynamic Programming](#characteristics);
+3. [Metode Dynamic Programming](#methods).
 
 ### General of Dynamic Programming
 
@@ -31,4 +31,29 @@ Suatu teknik algoritma untuk menyelesaikan masalah secara optimal dengan cara me
 - Bottom-Up with Tabulation
 
   Kebalikan dari top-down dan menghindari terjadinya rekursi. Masalah akan diselesaikan dalam tabel n-dimensi, kemudian solusi dari sub-masalah teratas akan dijadikan solusi final.
+
+## Tasks
+
+### P1 - Fibonacci with Top-Down
+
+- solution: [p1-top-down-fibonacci](praktikum/p1-top-down-fibonacci.go)
+- command to run:
   
+  ```bash
+    // case 1 .. 11
+    go run ./praktikum/p1-top-down-fibonacci.go 0 1 2 3 4 5 6 7 8 9 10
+  ```
+
+- screenshot: ![p1-top-down-fibonacci](screenshots/p1-top-down-fibonacci.png)
+
+### P1 - Fibonacci with Bottom-Up
+
+- solution: [p2-bottom-up-fibonacci](praktikum/p2-bottom-up-fibonacci.go)
+- command to run:
+  
+  ```bash
+    // case 1 .. 11
+    go run ./praktikum/p2-bottom-up-fibonacci.go 0 1 2 3 4 5 6 7 8 9 10
+  ```
+
+- screenshot: ![p2-bottom-up-fibonacci](screenshots/p2-bottom-up-fibonacci.png)
