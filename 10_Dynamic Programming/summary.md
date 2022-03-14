@@ -40,20 +40,32 @@ Suatu teknik algoritma untuk menyelesaikan masalah secara optimal dengan cara me
 - command to run:
   
   ```bash
-    // case 1 .. 11
+    # case 1 .. 11
     go run ./praktikum/p1-top-down-fibonacci.go 0 1 2 3 4 5 6 7 8 9 10
   ```
 
 - screenshot: ![p1-top-down-fibonacci](screenshots/p1-top-down-fibonacci.png)
 
-### P1 - Fibonacci with Bottom-Up
+### P2 - Fibonacci with Bottom-Up
 
 - solution: [p2-bottom-up-fibonacci](praktikum/p2-bottom-up-fibonacci.go)
 - command to run:
   
   ```bash
-    // case 1 .. 11
+    # case 1 .. 11
     go run ./praktikum/p2-bottom-up-fibonacci.go 0 1 2 3 4 5 6 7 8 9 10
   ```
 
 - screenshot: ![p2-bottom-up-fibonacci](screenshots/p2-bottom-up-fibonacci.png)
+
+### P3 - Frog Jumps
+
+- solution: [p3-frog-jump](praktikum/p3-frog-jump.go)
+- command to run:
+  
+  ```bash
+    # cases included
+    go run ./praktikum/p3-frog-jump.go
+  ```
+
+- screenshot: ![p3-frog-jump](screenshots/p3-frog-jump.png)
