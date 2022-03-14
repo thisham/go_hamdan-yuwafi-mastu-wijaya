@@ -2,6 +2,40 @@
 
 ## Overview
 
+Dalam chapter ini, dapat dipelajari:
+
+1. [Clean Code dan Karakteristiknya](#clean-code-dan-karakteristiknya);
+2. [Prinsip Clean Code](#prinsip-clean-code);
+3. [Refactoring](#refactoring).
+
+### Clean Code dan Karakteristiknya
+
+Clean code merupakan pola penulisan kode yang mudah dibaca, dipahami dan diubah oleh programmer dan maintainer kode.
+
+Karakteristiknya antara lain:
+
+- Mudah dipahami dan deskriptif, karena nama variabel menggambarkan data yang diisikan ke variabel tersebut;
+- Mudah dieja dan dicari, penamaan yang deskriptif dan menghindari singkatan yang tidak perlu akan lebih mudah untuk dicari dan digunakan lagi;
+- Konsisten, penamaan yang konsisten menolong maintainer untuk mencari dan me-reuse variabel tersebut;
+- Nama variabel sederhana dan langsung ke topik utama;
+- Komentar, jika kode sudah cukup deskriptif, tidak perlu untuk memberi komentar tambahan;
+- Penggunaan konvensi koding, penggunaan ketetapan yang baku membuat koding makin konsisten sehingga mudah terbaca;
+- Menggunakan format yang konsisten.
+
+### Prinsip Clean Code
+
+#### KISS (Keep It So Simple)
+
+Prinsip ini menghindari god-like function, yaitu satu fungsi yang melakukan banyak prosedur sekaligus.
+
+#### DRY (Don't Repeat Yourself)
+
+Prinsip ini mencegah duplikasi dengan menggunakan function untuk membungkus prosedur yang sering dipakai.
+
+### Refactoring
+
+Refactoring adalah proses me-restruktur kode dengan prinsip dan karakterisik clean code, sehingga dapat menambah tingkat keterbacaan kode tanpa mengubah behavior dari kode itu sendiri. Perubahan behavior yang disebabkan karena refactor dapat disebut dengan regression.
+
 ## Tasks
 
 ### P1 - Analysis
