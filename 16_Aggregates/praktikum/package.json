@@ -1,0 +1,14 @@
+{
+  "name": "praktikum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hamdan Yuwafi <yuwafi.hamdan365@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^4.4.1"
+  }
+}
