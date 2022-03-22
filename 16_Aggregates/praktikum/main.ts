@@ -69,7 +69,7 @@ async function main() {
     { _id: 2, publisherName: "Mizan" },
   ]);
 
-  // clause 2:1
+  // clause 2:1 [passed]
   // union books of author 1 + 2
   db.books.aggregate([
     {
@@ -83,7 +83,6 @@ async function main() {
         published_at: 1,
         category: 1,
       },
-      // {$unionWith: }
     },
   ]);
 
@@ -148,9 +147,8 @@ async function main() {
     },
   ]);
 
-  // clause 2:6 [failed]
+  // clause 2:6 [passed]
   // refer
-  // @error: Unrecognized pipeline stage name: '$sum'
   db.authors.aggregate([
     {
       $lookup: {
@@ -158,17 +156,31 @@ async function main() {
         localField: "_id",
         foreignField: "_author_id",
         as: "books",
+        pipeline: [
+          {
+            $lookup: {
+              from: "publishers",
+              localField: "_publisher_id",
+              foreignField: "_id",
+              as: "publishers",
+            },
+          },
+          { $unwind: "$publishers" },
+          {
+            $project: {
+              _id: {
+                $concat: ["$title", " (", "$publishers.publisherName", ")"],
+              },
+            },
+          },
+        ],
       },
     },
-    // {
-    //   $set: {
-    //     number_of_books: { $count: "books" },
-    //   },
-    // },
     {
       $project: {
         _id: { $concat: ["$firstName", " ", "$lastName"] },
-        books: { $map: { $concat: ["$title", "-"] } },
+        count_of_books: { $size: "$books" },
+        list_of_books: "$books._id",
       },
     },
   ]);
@@ -194,12 +206,73 @@ async function main() {
     },
   ]);
 
-  // clause 2:8
+  // clause 2:8 [passed]
   // book + price + author + publisher sort by price
-  db.books.aggregate([{ $ }]);
+  db.books.aggregate([
+    {
+      $lookup: {
+        from: "publishers",
+        localField: "_publisher_id",
+        foreignField: "_id",
+        as: "publishers",
+      },
+    },
+    { $unwind: "$publishers" },
+    {
+      $lookup: {
+        from: "authors",
+        localField: "_author_id",
+        foreignField: "_id",
+        as: "authors",
+      },
+    },
+    { $unwind: "$authors" },
+    { $sort: { price: -1 } },
+    {
+      $project: {
+        _id: 0,
+        title: 1,
+        price: 1,
+        author: { $concat: ["$authors.firstName", " ", "$authors.lastName"] },
+        publisher: "$publishers.publisherName",
+      },
+    },
+  ]);
 
-  // clause 2:9
-  //
+  // clause 2:9 [passed]
+  db.books.aggregate([
+    {
+      $lookup: {
+        from: "publishers",
+        localField: "_publisher_id",
+        foreignField: "_id",
+        as: "publishers",
+      },
+    },
+    { $unwind: "$publishers" },
+    {
+      $project: {
+        title: 1,
+        price: 1,
+        publisher: "$publishers.publisherName",
+      },
+    },
+    {
+      $unionWith: {
+        coll: "books",
+        pipeline: [
+          { $match: { $or: [{ _id: 3 }, { _id: 4 }] } },
+          {
+            $project: {
+              title: 1,
+              price: 1,
+              publisher: "$publishers.publisherName",
+            },
+          },
+        ],
+      },
+    },
+  ]);
 }
 
 main()
