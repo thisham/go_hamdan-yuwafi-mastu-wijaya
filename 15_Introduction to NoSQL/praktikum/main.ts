@@ -837,8 +837,11 @@ async function main() {
   // clause 1:2b [passed]
   db.products.findOne({ _id: 3 });
 
-  // clause 1:2c [failed]
-  db.users.aggregate([{ $match: { gender: "F" } }, { $count: "_id" }]);
+  // clause 1:2c [passed]
+  db.users.aggregate([
+    { $group: { _id: "$gender", users: { $count: {} } } },
+    { $match: { _id: "F" } },
+  ]);
 
   // clause 1:2d [passed]
   db.users.aggregate([{ $sort: { name: 1 } }]);
