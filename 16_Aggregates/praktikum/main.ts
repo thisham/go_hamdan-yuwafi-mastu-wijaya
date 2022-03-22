@@ -147,9 +147,8 @@ async function main() {
     },
   ]);
 
-  // clause 2:6 [failed]
+  // clause 2:6 [passed]
   // refer
-  // @error: Unrecognized pipeline stage name: '$sum'
   db.authors.aggregate([
     {
       $lookup: {
@@ -157,29 +156,31 @@ async function main() {
         localField: "_id",
         foreignField: "_author_id",
         as: "books",
-      },
-    },
-    {
-      $lookup: {
-        from: "publishers",
-        localField: "_publisher_id",
-        foreignField: "_id",
-        as: "publishers",
+        pipeline: [
+          {
+            $lookup: {
+              from: "publishers",
+              localField: "_publisher_id",
+              foreignField: "_id",
+              as: "publishers",
+            },
+          },
+          { $unwind: "$publishers" },
+          {
+            $project: {
+              _id: {
+                $concat: ["$title", " (", "$publishers.publisherName", ")"],
+              },
+            },
+          },
+        ],
       },
     },
     {
       $project: {
         _id: { $concat: ["$firstName", " ", "$lastName"] },
-        publishers: "$publishers",
-        list_of_books: {
-          $map: {
-            input: "$books",
-            as: "book",
-            in: {
-              $concat: ["$$book.title", " - "],
-            },
-          },
-        },
+        count_of_books: { $size: "$books" },
+        list_of_books: "$books._id",
       },
     },
   ]);
