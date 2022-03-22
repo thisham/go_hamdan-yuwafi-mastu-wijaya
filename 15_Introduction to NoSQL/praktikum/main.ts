@@ -7,7 +7,7 @@ async function main() {
 
   // queries
 
-  // clause 1:1a
+  // clause 1:1a [passed]
   db.operators.insertMany([
     {
       _id: 1,
@@ -41,7 +41,7 @@ async function main() {
     },
   ]);
 
-  // clause 1:1b
+  // clause 1:1b [passed]
   db.product_types.insertMany([
     { _id: 1, name: "laptop", created_at: new Date(), updated_at: new Date() },
     {
@@ -58,7 +58,7 @@ async function main() {
     },
   ]);
 
-  // clause 1:1c - 1:1e
+  // clause 1:1c - 1:1e [passed]
   db.products.insertMany([
     {
       _id: 1,
@@ -142,7 +142,7 @@ async function main() {
     },
   ]);
 
-  // clause 1:1f
+  // clause 1:1f [passed]
   db.product_descriptions.insertMany([
     {
       _id: 1,
@@ -194,7 +194,7 @@ async function main() {
     },
   ]);
 
-  // clause 1:1g
+  // clause 1:1g [passed]
   db.payment_methods.insertMany([
     {
       _id: 1,
@@ -219,7 +219,7 @@ async function main() {
     },
   ]);
 
-  // clause 1:1h
+  // clause 1:1h [passed]
   db.users.insertMany([
     {
       _id: 1,
@@ -268,7 +268,7 @@ async function main() {
     },
   ]);
 
-  // clause 1:1i
+  // clause 1:1i [passed]
   db.transactions.insertMany([
     {
       _id: 1,
@@ -422,7 +422,7 @@ async function main() {
     },
   ]);
 
-  // clause 1:1j
+  // clause 1:1j [passed]
   db.transaction_details.insertMany([
     {
       _transaction_id: 1,
@@ -831,34 +831,34 @@ async function main() {
     },
   ]);
 
-  // clause 1:2a
+  // clause 1:2a [passed]
   db.users.aggregate([{ $match: { gender: "M" } }]);
 
-  // clause 1:2b
+  // clause 1:2b [passed]
   db.products.findOne({ _id: 3 });
 
-  // clause 1:2c
+  // clause 1:2c [failed]
   db.users.aggregate([{ $match: { gender: "F" } }, { $count: "_id" }]);
 
-  // clause 1:2d
+  // clause 1:2d [passed]
   db.users.aggregate([{ $sort: { name: 1 } }]);
 
-  // clause 1:2e
+  // clause 1:2e [passed]
   db.users.find().limit(5);
 
-  // clause 1:3a
+  // clause 1:3a [passed]
   db.products.updateOne({ _id: 1 }, { $set: { name: "product dummy" } });
 
-  // clause 1:3b
+  // clause 1:3b [passed]
   db.transaction_details.updateMany(
     { _product_id: 1 },
     { $set: { quantity: 3 } }
   );
 
-  // clause 1:4a
+  // clause 1:4a [passed]
   db.products.deleteOne({ _id: 1 });
 
-  // clause 1:4b
+  // clause 1:4b [passed]
   db.products.deleteMany({ _product_type_id: 1 });
 }
 
