@@ -1,0 +1,195 @@
+{
+  "info": {
+    "name": "2-swapi",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "get starship numbered 9",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://swapi.dev/api/starships/9/",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "get all straships",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://swapi.dev/api/starships",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "get vehicles numbered 5",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://swapi.dev/api/vehicles/5",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "get all vehicles",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://swapi.dev/api/vehicles",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "add a new vehicle",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "POST",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": "{\r\n  \"name\": \"Sand Crawler\",\r\n  \"model\": \"Digger Crawler\",\r\n  \"manufacturer\": \"Corellia Mining Corporation\",\r\n  \"cost_in_credits\": \"150000\",\r\n  \"length\": \"36.8 \",\r\n  \"max_atmosphering_speed\": \"30\",\r\n  \"crew\": \"46\",\r\n  \"passengers\": \"30\",\r\n  \"cargo_capacity\": \"50000\",\r\n  \"consumables\": \"2 months\",\r\n  \"vehicle_class\": \"wheeled\",\r\n  \"pilots\": [],\r\n  \"films\": [\r\n    \"https://swapi.dev/api/films/1/\",\r\n    \"https://swapi.dev/api/films/5/\"\r\n  ],\r\n  \"url\": \"https://swapi.dev/api/vehicles/999/\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://swapi.dev/api/vehicles",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    }
+  ],
+  "variable": null,
+  "auth": null
+}
