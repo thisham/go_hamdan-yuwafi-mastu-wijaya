@@ -1,0 +1,209 @@
+{
+  "info": {
+    "name": "1-newsapi",
+    "description": null,
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "news by domains",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://newsapi.org/v2/everything?",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [
+            {
+              "key": "domains",
+              "value": "techcrunch.com,thenextweb.com",
+              "disabled": false
+            }
+          ],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "news by state",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://newsapi.org/v2/top-headlines?",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [
+            {
+              "key": "country",
+              "value": "us",
+              "disabled": false
+            }
+          ],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "access news with no auth",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://newsapi.org/v2/everything?",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [
+            {
+              "key": "domains",
+              "value": "techcrunch.com,thenextweb.com",
+              "disabled": false
+            }
+          ],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "top headline",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://newsapi.org/v2/top-headlines/sources",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    },
+    {
+      "name": "everything",
+      "item": null,
+      "request": {
+        "auth": {
+          "type": null,
+          "apikey": null,
+          "awsv4": null,
+          "basic": null,
+          "bearer": null,
+          "digest": null,
+          "hawk": null,
+          "ntlm": null,
+          "oauth1": null,
+          "oauth2": null
+        },
+        "method": "GET",
+        "header": null,
+        "body": {
+          "mode": null,
+          "raw": null,
+          "options": null,
+          "formdata": null,
+          "urlencoded": null,
+          "file": null
+        },
+        "url": {
+          "raw": "https://newsapi.org/v2/everything",
+          "protocol": null,
+          "host": null,
+          "path": null,
+          "query": [],
+          "variable": null
+        }
+      }
+    }
+  ],
+  "variable": null,
+  "auth": null
+}
