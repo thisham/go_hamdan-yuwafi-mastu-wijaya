@@ -70,15 +70,37 @@ func UpdateUserController(context echo.Context) error {
 		})
 	}
 
-	return context.JSON(http.StatusOK, map[string]interface{}{
+	return context.JSON(http.StatusNoContent, map[string]interface{}{
 		"message": "success",
 		"result":  jsonBody,
 	})
 }
 
 func DeleteUserController(context echo.Context) error {
-	return context.JSON(http.StatusOK, map[string]interface{}{
+	var userIndex int = -1
+	userId, _ := strconv.Atoi(context.Param("id"))
+
+	for index, user := range constants.Users {
+		if user.Id == userId {
+			userIndex = index
+			break
+		}
+	}
+
+	if userIndex == -1 {
+		return context.JSON(http.StatusNotFound, map[string]interface{}{
+			"message": "failed",
+			"result":  "not found!",
+		})
+	}
+
+	usr := make([]constants.User, 0)
+	usr = append(usr, constants.Users[:userIndex]...)
+	usr = append(usr, constants.Users[userIndex+1:]...)
+	constants.Users = usr
+
+	return context.JSON(http.StatusNoContent, map[string]interface{}{
 		"message": "success",
-		"result":  context.Param("id"),
+		"result":  "data deleted.",
 	})
 }
