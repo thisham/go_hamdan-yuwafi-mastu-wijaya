@@ -60,8 +60,30 @@ func CreateUserController(context echo.Context) error {
 }
 
 func UpdateUserController(context echo.Context) error {
-	jsonBody := make(map[string]interface{})
+	userId, _ := strconv.Atoi(context.Param("id"))
+	jsonBody := constants.User{
+		Id:       userId,
+		Name:     "",
+		Email:    "",
+		Password: "",
+	}
 	err := json.NewDecoder(context.Request().Body).Decode(&jsonBody)
+
+	var userIndex int = -1
+
+	for index, user := range constants.Users {
+		if user.Id == userId {
+			userIndex = index
+			break
+		}
+	}
+
+	if userIndex == -1 {
+		return context.JSON(http.StatusNotFound, map[string]interface{}{
+			"message": "failed",
+			"result":  "not found!",
+		})
+	}
 
 	if err != nil {
 		return context.JSON(http.StatusBadRequest, map[string]interface{}{
@@ -69,6 +91,8 @@ func UpdateUserController(context echo.Context) error {
 			"result":  "bad request",
 		})
 	}
+
+	constants.Users[userIndex] = jsonBody
 
 	return context.JSON(http.StatusNoContent, map[string]interface{}{
 		"message": "success",
