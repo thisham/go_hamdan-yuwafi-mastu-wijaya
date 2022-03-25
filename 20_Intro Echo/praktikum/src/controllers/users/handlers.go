@@ -53,9 +53,9 @@ func CreateUserController(context echo.Context) error {
 
 	constants.Users = append(constants.Users, jsonBody)
 
-	return context.JSON(http.StatusOK, map[string]interface{}{
+	return context.JSON(http.StatusCreated, map[string]interface{}{
 		"message": "success",
-		"result":  jsonBody,
+		"result":  "data created",
 	})
 }
 
