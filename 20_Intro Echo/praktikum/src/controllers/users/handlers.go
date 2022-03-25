@@ -4,40 +4,25 @@ import (
 	"encoding/json"
 	"net/http"
 	"static-api/src/constants"
+	"static-api/src/utils"
 	"strconv"
 
 	"github.com/labstack/echo/v4"
 )
 
 func GetAllUserController(context echo.Context) error {
-	return context.JSON(http.StatusOK, map[string]interface{}{
-		"message": "success",
-		"users":   constants.Users,
-	})
+	return utils.CreateResponse(context, http.StatusOK, "got users list", constants.Users)
 }
 
 func GetUserController(context echo.Context) error {
-	searchUserId, _ := strconv.Atoi(context.Param("id"))
-	var userFound constants.User
+	userId, _ := strconv.Atoi(context.Param("id"))
+	var foundUserIndex = findUserIndex(userId)
 
-	for _, user := range constants.Users {
-		if user.Id == searchUserId {
-			userFound = user
-			break
-		}
+	if foundUserIndex == -1 {
+		return utils.CreateResponse(context, http.StatusNotFound, "user not found!")
 	}
 
-	if userFound == (constants.User{}) {
-		return context.JSON(http.StatusNotFound, map[string]interface{}{
-			"message": "failed",
-			"result":  "user not found!",
-		})
-	}
-
-	return context.JSON(http.StatusOK, map[string]interface{}{
-		"message": "success",
-		"uri":     userFound,
-	})
+	return utils.CreateResponse(context, http.StatusOK, "user found!", constants.Users[foundUserIndex])
 }
 
 func CreateUserController(context echo.Context) error {
@@ -45,18 +30,11 @@ func CreateUserController(context echo.Context) error {
 	err := json.NewDecoder(context.Request().Body).Decode(&jsonBody)
 
 	if err != nil {
-		return context.JSON(http.StatusBadRequest, map[string]interface{}{
-			"message": "failed",
-			"result":  "bad request",
-		})
+		return utils.CreateResponse(context, http.StatusBadRequest, "bad request recived.")
 	}
 
 	constants.Users = append(constants.Users, jsonBody)
-
-	return context.JSON(http.StatusCreated, map[string]interface{}{
-		"message": "success",
-		"result":  "data created",
-	})
+	return utils.CreateResponse(context, http.StatusCreated, "user created.")
 }
 
 func UpdateUserController(context echo.Context) error {
@@ -69,62 +47,32 @@ func UpdateUserController(context echo.Context) error {
 	}
 	err := json.NewDecoder(context.Request().Body).Decode(&jsonBody)
 
-	var userIndex int = -1
-
-	for index, user := range constants.Users {
-		if user.Id == userId {
-			userIndex = index
-			break
-		}
-	}
-
-	if userIndex == -1 {
-		return context.JSON(http.StatusNotFound, map[string]interface{}{
-			"message": "failed",
-			"result":  "not found!",
-		})
-	}
-
 	if err != nil {
-		return context.JSON(http.StatusBadRequest, map[string]interface{}{
-			"message": "failed",
-			"result":  "bad request",
-		})
+		return utils.CreateResponse(context, http.StatusBadRequest, "bad request received.")
 	}
 
-	constants.Users[userIndex] = jsonBody
+	var foundUserIndex = findUserIndex(userId)
 
-	return context.JSON(http.StatusNoContent, map[string]interface{}{
-		"message": "success",
-		"result":  jsonBody,
-	})
+	if foundUserIndex == -1 {
+		return utils.CreateResponse(context, http.StatusNotFound, "user not found.")
+	}
+
+	constants.Users[foundUserIndex] = jsonBody
+	return utils.CreateResponse(context, http.StatusNoContent, "user data updated.")
 }
 
 func DeleteUserController(context echo.Context) error {
-	var userIndex int = -1
 	userId, _ := strconv.Atoi(context.Param("id"))
+	var foundUserIndex = findUserIndex(userId)
 
-	for index, user := range constants.Users {
-		if user.Id == userId {
-			userIndex = index
-			break
-		}
-	}
-
-	if userIndex == -1 {
-		return context.JSON(http.StatusNotFound, map[string]interface{}{
-			"message": "failed",
-			"result":  "not found!",
-		})
+	if foundUserIndex == -1 {
+		return utils.CreateResponse(context, http.StatusNotFound, "user not found!")
 	}
 
 	usr := make([]constants.User, 0)
-	usr = append(usr, constants.Users[:userIndex]...)
-	usr = append(usr, constants.Users[userIndex+1:]...)
+	usr = append(usr, constants.Users[:foundUserIndex]...)
+	usr = append(usr, constants.Users[foundUserIndex+1:]...)
 	constants.Users = usr
 
-	return context.JSON(http.StatusNoContent, map[string]interface{}{
-		"message": "success",
-		"result":  "data deleted.",
-	})
+	return utils.CreateResponse(context, http.StatusNoContent, "data updated.")
 }
