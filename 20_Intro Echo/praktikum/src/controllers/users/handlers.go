@@ -33,8 +33,7 @@ func CreateUserController(context echo.Context) error {
 		return utils.CreateResponse(context, http.StatusBadRequest, "bad request recived.")
 	}
 
-	constants.Users = append(constants.Users, jsonBody)
-	return utils.CreateResponse(context, http.StatusCreated, "user created.")
+	return createUser(context, jsonBody)
 }
 
 func UpdateUserController(context echo.Context) error {
@@ -57,8 +56,7 @@ func UpdateUserController(context echo.Context) error {
 		return utils.CreateResponse(context, http.StatusNotFound, "user not found.")
 	}
 
-	constants.Users[foundUserIndex] = jsonBody
-	return utils.CreateResponse(context, http.StatusNoContent, "user data updated.")
+	return updateUser(context, foundUserIndex, userId, jsonBody)
 }
 
 func DeleteUserController(context echo.Context) error {
@@ -69,10 +67,5 @@ func DeleteUserController(context echo.Context) error {
 		return utils.CreateResponse(context, http.StatusNotFound, "user not found!")
 	}
 
-	usr := make([]constants.User, 0)
-	usr = append(usr, constants.Users[:foundUserIndex]...)
-	usr = append(usr, constants.Users[foundUserIndex+1:]...)
-	constants.Users = usr
-
-	return utils.CreateResponse(context, http.StatusNoContent, "data updated.")
+	return deleteUser(context, foundUserIndex)
 }
