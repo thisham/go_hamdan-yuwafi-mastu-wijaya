@@ -7,6 +7,7 @@ import (
 
 func init() {
 	database.Migrate()
+	// database.Demigrate()
 }
 
 func main() {
