@@ -1,6 +1,13 @@
 package main
 
-import "gorm-mvc-api/src/routes"
+import (
+	"gorm-mvc-api/src/database"
+	"gorm-mvc-api/src/routes"
+)
+
+func init() {
+	database.Migrate()
+}
 
 func main() {
 	api := routes.New()
