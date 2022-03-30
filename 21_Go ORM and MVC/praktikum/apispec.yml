@@ -4,7 +4,9 @@ info:
   version: '1.0'
 servers:
   - url: https://api.server.test/v1
+    description: Example Mock Server
   - url: http://localhost:4010
+    description: Local Mock Server by Prism
 paths:
   /users:
     get:
