@@ -23,7 +23,7 @@ paths:
                     id:
                       type: string
                       example: abd121e8-dumm-dumm-dumm-dummycreated
-                    fullname:
+                    name:
                       type: string
                       example: Yehezkiel Saragih
                     email:
@@ -41,11 +41,11 @@ paths:
             schema: 
               type: object
               required: 
-                - fullname
+                - name
                 - email
                 - password
               properties:
-                fullname:
+                name:
                   type: string
                 email:
                   type: string
@@ -54,6 +54,10 @@ paths:
       responses:
         '201':
           description: User Created
+        '400':
+          description: Request Failed
+        '500':
+          description: Server Error
   /users/:id:
     get:
       responses:
@@ -67,7 +71,7 @@ paths:
                   id: 
                     type: string
                     example: abd121e8-dumm-dumm-dumm-dummycreated
-                  fullname:
+                  name:
                     type: string
                     example: Yehezkiel Saragih
                   email:
@@ -87,11 +91,11 @@ paths:
             schema:
               type: object
               required: 
-                - fullname
+                - name
                 - email
                 - password
               properties:
-                fullname:
+                name:
                   type: string
                 email:
                   type: string
