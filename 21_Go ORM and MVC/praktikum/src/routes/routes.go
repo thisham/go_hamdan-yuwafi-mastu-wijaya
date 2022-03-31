@@ -11,6 +11,7 @@ func New() *echo.Echo {
 
 	route.GET("/users", users.GetAllUsers)
 	route.POST("/users", users.CreateUser)
+	route.PUT("/users/:id", users.UpdateUser)
 
 	return route
 }

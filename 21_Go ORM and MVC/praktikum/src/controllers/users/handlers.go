@@ -33,3 +33,14 @@ func CreateUser(echoContext echo.Context) error {
 
 	return utils.CreateResponse(echoContext, http.StatusCreated, "user created")
 }
+
+func UpdateUser(echoContext echo.Context) error {
+	var request user.User
+	echoContext.Bind(&request)
+
+	if err := factory.UpdateUser(request, echoContext.Param("id")); err != nil {
+		return utils.CreateResponse(echoContext, http.StatusBadRequest, "request failed", err)
+	}
+
+	return utils.CreateResponse(echoContext, http.StatusNoContent, "user updated")
+}

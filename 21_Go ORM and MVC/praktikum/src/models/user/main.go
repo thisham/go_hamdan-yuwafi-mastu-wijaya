@@ -25,3 +25,11 @@ func (repo *UserRepository) CreateUser(user User) error {
 
 	return nil
 }
+
+func (repo *UserRepository) UpdateUser(user User, id string) error {
+	if err := repo.DB.Where("ID = ?", id).Updates(&user).Error; err != nil {
+		return err
+	}
+
+	return nil
+}
