@@ -138,9 +138,9 @@ paths:
                     title:
                       type: string
                       example: Kalkulus Edisi 9, Jilid 1
-                    authors:
-                      type: array
-                      example: ['Dale Varberg', 'Edwin J. Purcell', 'Steven E. Rigdon']
+                    author:
+                      type: string
+                      example: 'Dale Varberg; Edwin J. Purcell; Steven E. Rigdon'
                     publisher:
                       type: string
                       example: 'Penerbit Erlangga'
@@ -167,7 +167,7 @@ paths:
               properties:
                 title:
                   type: string
-                authors:
+                author:
                   type: string
                   example: 'Dale Varberg; Edwin J. Purcell; Steven E. Rigdon'
                 publisher:
@@ -199,9 +199,9 @@ paths:
                   title:
                     type: string
                     example: Kalkulus Edisi 9, Jilid 1
-                  authors:
-                    type: array
-                    example: ['Dale Varberg', 'Edwin J. Purcell', 'Steven E. Rigdon']
+                  author:
+                    type: string
+                    example: 'Dale Varberg; Edwin J. Purcell; Steven E. Rigdon'
                   publisher:
                     type: string
                     example: 'Penerbit Erlangga'
@@ -230,7 +230,7 @@ paths:
               properties:
                 title:
                   type: string
-                authors:
+                author:
                   type: string
                   example: 'Dale Varberg; Edwin J. Purcell; Steven E. Rigdon'
                 publisher:
