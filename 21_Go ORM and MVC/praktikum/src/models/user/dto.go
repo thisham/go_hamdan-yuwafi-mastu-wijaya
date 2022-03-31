@@ -18,6 +18,7 @@ type UserModel interface {
 	GetUser(id string) (User, error)
 	CreateUser(user User) error
 	UpdateUser(user User, id string) error
+	DeleteUser(id string) error
 }
 
 type UserRepository struct {

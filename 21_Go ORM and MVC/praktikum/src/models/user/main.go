@@ -33,3 +33,11 @@ func (repo *UserRepository) UpdateUser(user User, id string) error {
 
 	return nil
 }
+
+func (repo *UserRepository) DeleteUser(id string) error {
+	if err := repo.DB.Where("ID = ?", id).Delete(&User{}).Error; err != nil {
+		return err
+	}
+
+	return nil
+}

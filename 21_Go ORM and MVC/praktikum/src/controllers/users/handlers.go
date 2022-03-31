@@ -55,3 +55,13 @@ func UpdateUser(echoContext echo.Context) error {
 
 	return utils.CreateResponse(echoContext, http.StatusNoContent, "user updated")
 }
+
+func DeleteUser(echoContext echo.Context) error {
+	var userID string = echoContext.Param("id")
+
+	if err := factory.DeleteUser(userID); err != nil {
+		return utils.CreateResponse(echoContext, http.StatusBadRequest, "request failed")
+	}
+
+	return utils.CreateResponse(echoContext, http.StatusNoContent, "user deleted")
+}

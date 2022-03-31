@@ -13,6 +13,7 @@ func New() *echo.Echo {
 	route.POST("/users", users.CreateUser)
 	route.GET("/users/:id", users.GetUser)
 	route.PUT("/users/:id", users.UpdateUser)
+	route.DELETE("/users/:id", users.DeleteUser)
 
 	return route
 }
