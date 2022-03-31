@@ -16,6 +16,11 @@ type Book struct {
 }
 
 type BookModel interface {
+	GetAllBooks() ([]Book, error)
+	GetBook(id string) (Book, error)
+	CreateBook(book Book) error
+	UpdateBook(book Book, id string) error
+	DeleteBook(id string) error
 }
 
 type BookRepository struct {
