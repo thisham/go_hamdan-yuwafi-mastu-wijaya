@@ -9,11 +9,14 @@ import (
 func New() *echo.Echo {
 	route := echo.New()
 
+	// users
 	route.GET("/users", users.GetAllUsers)
 	route.POST("/users", users.CreateUser)
 	route.GET("/users/:id", users.GetUser)
 	route.PUT("/users/:id", users.UpdateUser)
 	route.DELETE("/users/:id", users.DeleteUser)
+
+	// books
 
 	return route
 }
