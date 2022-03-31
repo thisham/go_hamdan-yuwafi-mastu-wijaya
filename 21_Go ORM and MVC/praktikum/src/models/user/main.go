@@ -11,7 +11,7 @@ func (repo *UserRepository) GetAllUsers() ([]User, error) {
 
 func (repo *UserRepository) GetUser(id string) (User, error) {
 	var user User
-	if err := repo.DB.Find(&user, id).Error; err != nil {
+	if err := repo.DB.Where("ID = ?", id).Find(&user).Error; err != nil {
 		return User{}, err
 	}
 

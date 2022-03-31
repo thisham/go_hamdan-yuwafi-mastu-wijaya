@@ -23,6 +23,17 @@ func GetAllUsers(echoContext echo.Context) error {
 	return utils.CreateResponse(echoContext, http.StatusOK, "OK", users)
 }
 
+func GetUser(echoContext echo.Context) error {
+	var userID string = echoContext.Param("id")
+	userData, err := factory.GetUser(userID)
+
+	if err != nil {
+		return utils.CreateResponse(echoContext, http.StatusBadRequest, "request failed", err)
+	}
+
+	return utils.CreateResponse(echoContext, http.StatusOK, "OK", userData)
+}
+
 func CreateUser(echoContext echo.Context) error {
 	var request user.User
 	echoContext.Bind(&request)
