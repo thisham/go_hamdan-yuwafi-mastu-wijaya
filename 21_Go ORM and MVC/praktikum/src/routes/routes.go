@@ -10,6 +10,7 @@ func New() *echo.Echo {
 	route := echo.New()
 
 	route.GET("/users", users.GetAllUsers)
+	route.POST("/users", users.CreateUser)
 
 	return route
 }

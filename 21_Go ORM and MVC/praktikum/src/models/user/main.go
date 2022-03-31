@@ -17,3 +17,11 @@ func (repo *UserRepository) GetUser(id string) (User, error) {
 
 	return user, nil
 }
+
+func (repo *UserRepository) CreateUser(user User) error {
+	if err := repo.DB.Create(&user).Error; err != nil {
+		return err
+	}
+
+	return nil
+}

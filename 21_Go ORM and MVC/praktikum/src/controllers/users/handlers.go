@@ -3,6 +3,7 @@ package users
 import (
 	"gorm-mvc-api/src/database"
 	"gorm-mvc-api/src/database/factories"
+	"gorm-mvc-api/src/models/user"
 	"gorm-mvc-api/src/utils"
 	"net/http"
 
@@ -20,4 +21,15 @@ func GetAllUsers(echoContext echo.Context) error {
 	}
 
 	return utils.CreateResponse(echoContext, http.StatusOK, "OK", users)
+}
+
+func CreateUser(echoContext echo.Context) error {
+	var request user.User
+	echoContext.Bind(&request)
+
+	if err := factory.CreateUser(request); err != nil {
+		return utils.CreateResponse(echoContext, http.StatusBadRequest, "request failed")
+	}
+
+	return utils.CreateResponse(echoContext, http.StatusCreated, "user created")
 }
