@@ -12,5 +12,5 @@ func init() {
 
 func main() {
 	api := routes.New()
-	api.Logger.Fatal(api.Start("0.0.0.0:8000"))
+	api.Logger.Fatal(api.Start(":8000"))
 }
