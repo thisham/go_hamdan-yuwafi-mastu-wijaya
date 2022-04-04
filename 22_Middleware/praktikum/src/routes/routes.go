@@ -3,12 +3,14 @@ package routes
 import (
 	"middleware-api/src/controllers/books"
 	"middleware-api/src/controllers/users"
+	"middleware-api/src/middlewares"
 
 	"github.com/labstack/echo/v4"
 )
 
 func New() *echo.Echo {
 	route := echo.New()
+	middlewares.Logger(route)
 
 	// users
 	route.GET("/users", users.GetAllUsers)
