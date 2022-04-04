@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"middleware-api/src/controllers/authentications"
 	"middleware-api/src/controllers/books"
 	"middleware-api/src/controllers/users"
 	"middleware-api/src/middlewares"
@@ -11,6 +12,9 @@ import (
 func New() *echo.Echo {
 	route := echo.New()
 	middlewares.Logger(route)
+
+	// token-generate
+	route.GET("/token-generate", authentications.LoginHandler)
 
 	// users
 	route.GET("/users", users.GetAllUsers)
