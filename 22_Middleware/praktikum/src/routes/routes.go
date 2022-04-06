@@ -13,22 +13,26 @@ func New() *echo.Echo {
 	route := echo.New()
 	middlewares.Logger(route)
 
+	// implement auth middleware
+	authRoutes := route.Group("")
+	authRoutes.Use(middlewares.VerifyAuthentication())
+
 	// token-generate
 	route.GET("/token-generate", authentications.LoginHandler)
 
 	// users
 	route.GET("/users", users.GetAllUsers)
-	route.POST("/users", users.CreateUser)
-	route.GET("/users/:id", users.GetUser)
-	route.PUT("/users/:id", users.UpdateUser)
-	route.DELETE("/users/:id", users.DeleteUser)
+	authRoutes.POST("/users", users.CreateUser)
+	authRoutes.GET("/users/:id", users.GetUser)
+	authRoutes.PUT("/users/:id", users.UpdateUser)
+	authRoutes.DELETE("/users/:id", users.DeleteUser)
 
 	// books
-	route.GET("/books", books.GetAllBooks)
-	route.POST("/books", books.CreateBook)
-	route.GET("/books/:id", books.GetBook)
-	route.PUT("/books/:id", books.UpdateBook)
-	route.DELETE("/books/:id", books.DeleteBook)
+	authRoutes.GET("/books", books.GetAllBooks)
+	authRoutes.POST("/books", books.CreateBook)
+	authRoutes.GET("/books/:id", books.GetBook)
+	authRoutes.PUT("/books/:id", books.UpdateBook)
+	authRoutes.DELETE("/books/:id", books.DeleteBook)
 
 	return route
 }

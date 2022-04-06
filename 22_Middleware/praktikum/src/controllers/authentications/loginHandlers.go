@@ -16,10 +16,6 @@ func LoginHandler(echoContext echo.Context) error {
 		return utils.CreateResponse(echoContext, http.StatusInternalServerError, "ERROR: something went wrong while creating JWT token!")
 	}
 
-	authCookie := http.Cookie{
-		Name:  "token",
-		Value: token,
-	}
-	echoContext.SetCookie(&authCookie)
+	utils.SetAuthCookie(echoContext, token)
 	return utils.CreateResponse(echoContext, http.StatusOK, "OK", token)
 }
