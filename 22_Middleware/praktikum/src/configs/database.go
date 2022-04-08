@@ -1,25 +1,25 @@
 package configs
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/caarlos0/env/v6"
+)
 
 type DatabaseCredential struct {
-	Username string
-	Password string
-	Hostname string
-	Port     int
-	Database string
+	Username string `env:"DB_USERNAME"`
+	Password string `env:"DB_PASSWORD"`
+	Hostname string `env:"DB_HOST"`
+	Port     int    `env:"DB_PORT"`
+	Database string `env:"DB_NAME"`
 	Options  string
 }
 
 func SetupDatabase() (connectionString string) {
-	var connectionData = DatabaseCredential{
-		Username: "root",
-		Password: "admin",
-		Hostname: "127.0.0.1",
-		Port:     3306,
-		Database: "km2golangc",
-		Options:  "timeout=90s&collation=utf8mb4_unicode_ci&parseTime=true",
+	var db = DatabaseCredential{
+		Options: "timeout=90s&collation=utf8mb4_unicode_ci&parseTime=true",
 	}
 
-	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?%s", connectionData.Username, connectionData.Password, connectionData.Hostname, connectionData.Port, connectionData.Database, connectionData.Options)
+	env.Parse(db)
+	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?%s", db.Username, db.Password, db.Hostname, db.Port, db.Database, db.Options)
 }

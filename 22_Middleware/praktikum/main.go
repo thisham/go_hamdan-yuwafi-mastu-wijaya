@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"middleware-api/src/configs"
 	"middleware-api/src/database"
 	"middleware-api/src/routes"
 )
@@ -12,5 +14,6 @@ func init() {
 
 func main() {
 	api := routes.New()
-	api.Logger.Fatal(api.Start(":8000"))
+	serverPort := configs.GetServerConfig().Port
+	api.Logger.Fatal(api.Start(fmt.Sprintf(":%d", serverPort)))
 }
