@@ -8,6 +8,6 @@ type JwtSecret struct {
 
 func GetJwtSecret() JwtSecret {
 	config := JwtSecret{}
-	env.Parse(config)
+	env.Parse(&config)
 	return config
 }
