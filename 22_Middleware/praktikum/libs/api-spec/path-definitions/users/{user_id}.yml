@@ -1,0 +1,40 @@
+get:
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/User.yml#/User'
+    '400':
+      description: Request Failed
+    '404':
+      description: Data Not Found
+    '500':
+      description: Server Error
+put:
+  requestBody:
+    required: true
+    content: 
+      application/json:
+        schema:
+          $ref: '../../schemas/User.yml#/UserInput'
+  responses:
+    '204':
+      description: Data Updated
+    '400':
+      description: Request Failed
+    '404':
+      description: Data Not Found
+    '500':
+      description: Server Error
+delete:
+  responses:
+    '204':
+      description: Data Updated
+    '400':
+      description: Request Failed
+    '404':
+      description: Data Not Found
+    '500':
+      description: Server Error

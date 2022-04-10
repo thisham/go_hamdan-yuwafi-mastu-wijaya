@@ -1,0 +1,52 @@
+parameters:
+  - in: 'path'
+    name: 'book_id'
+    required: true
+    schema: 
+      type: string
+
+get:
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/Book.yml#/Book'
+    '404':
+      description: Data Not Found
+    '500':
+      description: Server Error
+put:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - title
+            - authors
+            - publisher
+            - language
+          properties:
+            $ref: '../../schemas/Book.yml#/BookInput'
+  responses:
+    '204':
+      description: Data Updated
+    '400':
+      description: Request Failed
+    '404':
+      description: Data Not Found
+    '500':
+      description: Server Error
+delete:
+  responses:
+    '204':
+      description: Data Updated
+    '400':
+      description: Request Failed
+    '404':
+      description: Data Not Found
+    '500':
+      description: Server Error
