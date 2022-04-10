@@ -1,0 +1,41 @@
+Book:
+  type: object
+  properties:
+    id:
+      type: string
+      example: bdd511ea-dumm-dumm-dumm-dummycreated
+    title:
+      type: string
+      example: Kalkulus Edisi 9, Jilid 1
+    author:
+      type: string
+      example: 'Dale Varberg; Edwin J. Purcell; Steven E. Rigdon'
+    publisher:
+      type: string
+      example: 'Penerbit Erlangga'
+    isbn:
+      type: string
+      example: '9789790339378'
+    language:
+      type: string
+      example: 'indonesian'
+
+BookInput:
+  type: object
+  required:
+    - title
+    - authors
+    - publisher
+    - language
+  properties:
+    title:
+      type: string
+    author:
+      type: string
+      example: 'Dale Varberg; Edwin J. Purcell; Steven E. Rigdon'
+    publisher:
+      type: string
+    isbn:
+      type: string
+    language:
+      type: string
