@@ -7,19 +7,15 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
-const (
-	UserId = "adb182ce-dumm-dumm-dumm-dummycreated"
-)
-
 type JwtCustomClaims struct {
 	jwt.StandardClaims
 }
 
-func GenerateJwt() (string, error) {
+func GenerateJwt(userId string) (string, error) {
 	claims := JwtCustomClaims{
 		jwt.StandardClaims{
 			ExpiresAt: time.Now().Add(24 * time.Hour).Unix(),
-			Id:        UserId,
+			Id:        userId,
 		},
 	}
 

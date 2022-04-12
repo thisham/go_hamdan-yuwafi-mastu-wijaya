@@ -14,5 +14,8 @@ func VerifyAuthentication() echo.MiddlewareFunc {
 		SigningKey:  []byte(configs.GetJwtSecret().SecretKey),
 		Claims:      jwt.MapClaims{},
 		ContextKey:  "token",
+		ErrorHandler: func(err error) error {
+			return echo.ErrUnauthorized
+		},
 	})
 }

@@ -15,5 +15,5 @@ func init() {
 func main() {
 	api := routes.New()
 	serverPort := configs.GetServerConfig().Port
-	api.Logger.Fatal(api.Start(fmt.Sprintf(":%d", serverPort)))
+	api.Logger.Fatal(api.Start(fmt.Sprintf(":%s", serverPort)))
 }
