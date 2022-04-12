@@ -1,0 +1,38 @@
+get:
+  responses:
+    '200':
+      description: OK
+      content: 
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object 
+              properties:
+                id:
+                  type: string
+                  example: abd121e8-dumm-dumm-dumm-dummycreated
+                name:
+                  type: string
+                  example: Yehezkiel Saragih
+                email:
+                  type: string
+                  example: yehezkielsr@example.com
+    '400':
+      description: Request Failed
+    '500':
+      description: Server Error
+post:
+  requestBody:
+    required: true
+    content: 
+      application/json:
+        schema: 
+          $ref: '../../schemas/User.yml#/UserInput'
+  responses:
+    '201':
+      description: User Created
+    '400':
+      description: Request Failed
+    '500':
+      description: Server Error
