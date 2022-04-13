@@ -1,13 +1,12 @@
 package configs
 
-import "github.com/caarlos0/env/v6"
-
 type JwtSecret struct {
-	SecretKey string `env:"JWT_SECRET"`
+	SecretKey string
 }
 
 func GetJwtSecret() JwtSecret {
-	config := JwtSecret{}
-	env.Parse(&config)
+	config := JwtSecret{
+		SecretKey: GetServerConfig().JwtSecretKey,
+	}
 	return config
 }

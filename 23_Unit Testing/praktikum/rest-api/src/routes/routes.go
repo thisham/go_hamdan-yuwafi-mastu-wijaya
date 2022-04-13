@@ -18,7 +18,7 @@ func New() *echo.Echo {
 	authRoutes.Use(middlewares.VerifyAuthentication())
 
 	// token-generate
-	route.GET("/token-generate", authentications.LoginHandler)
+	route.POST("/login", authentications.LoginHandler)
 
 	// users
 	route.GET("/users", users.GetAllUsers)
