@@ -1,0 +1,14 @@
+mode: atomic
+simple-calc/main.go:23.35,25.2 1 2
+simple-calc/main.go:27.41,29.2 1 2
+simple-calc/main.go:31.40,33.2 1 2
+simple-calc/main.go:35.42,37.2 1 2
+simple-calc/main.go:39.44,40.23 1 6
+simple-calc/main.go:41.13,42.21 1 1
+simple-calc/main.go:43.19,44.27 1 1
+simple-calc/main.go:45.18,46.26 1 1
+simple-calc/main.go:47.16,48.24 1 1
+simple-calc/main.go:49.10,50.25 1 2
+simple-calc/main.go:54.34,65.2 5 1
+simple-calc/main.go:67.14,70.2 2 1
+simple-calc/main.go:72.13,74.2 1 1
