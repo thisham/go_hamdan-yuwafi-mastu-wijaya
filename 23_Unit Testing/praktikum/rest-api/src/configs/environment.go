@@ -18,7 +18,7 @@ type ServerConfig struct {
 }
 
 func GetServerConfig() ServerConfig {
-	if err := godotenv.Load(); err != nil {
+	if err := godotenv.Load(); err != nil && os.Getenv("ENV") != "test" {
 		log.Fatal("Error loading .env file.")
 	}
 
